@@ -1,0 +1,337 @@
+Cluster    Screenshots  Classification
+====================================================================================================
+354        333          Fearful or suspenseful women's faces and eyes dramatically obscured or revealed by darkness and shadow.
+297        309          Intimate bedroom scenes of couples in close physical embrace or repose, typically under soft or dim lighting.
+294        290          Tense, dimly lit indoor dialogues between two individuals.
+30         186          Movie credit sequences featuring high-contrast text against simple, often dark or solid-colored backgrounds.
+264        154          Suspenseful nocturnal scenes featuring solitary vehicles navigating or parked on dark, desolate, or forested roads, often with headlights piercing the pervasive shadows.
+247        118          Scenes of men engaged in tense and urgent phone calls within dimly lit, suspenseful indoor settings.
+262        117          Tense, dimly lit nocturnal conversations between a man and a woman inside a car.
+309        116          Vulnerable women sleeping in dimly lit, suspenseful settings.
+215        106          Tense and intimate dialogues or confrontations among women in private indoor settings.
+289        101          Contemplative and investigative office scenes.
+270        100          Eerie nocturnal scenes set in dense, dark forests, featuring shadowy figures and an atmosphere of hidden dangers.
+347        100          Ominous encounters with shadowy figures at dimly lit doorways.
+323        98           Professional or investigative office meetings among men engaged in serious or tense discussions.
+358        97           Suspenseful scenes of women cautiously engaging with dark or shadowy doorways.
+306        96           Close-up shots of a hand gripping a knife in darkness, establishing intense suspense and the imminent threat of violence.
+274        95           Dark, suspenseful scenes of an unidentifiable figure emerging from profound obscurity.
+146        86           Tense domestic interactions or conversations in a kitchen setting.
+205        83           Tense outdoor discussions between two men, frequently set in lush natural environments or against rustic stone backdrops.
+350        76           Suspenseful scenes depicting women fearfully traversing dimly lit staircases and hallways, marked by pervasive shadows creating an eerie and foreboding atmosphere.
+292        72           Scenes of intimate embraces and kisses between a man and a woman, often portrayed in atmospheric low light or dramatic color.
+208        68           Contemplative formally-dressed men isolated within serene yet mysterious natural outdoor environments.
+197        66           Dimly lit scenes of vulnerable men in bed.
+321        65           Shadowy figures navigating dimly lit, suspenseful staircases.
+371        64           Giallo scenes of a woman being stalked by a masked, knife-wielding figure in a shadowy corridor.
+137        61           Scientific investigation and discussion in laboratory settings.
+332        60           Pivotal, tense discussions or confrontations between formally dressed men in private settings.
+80         59           Courtroom trial proceedings with judges, lawyers, and juries.
+298        57           Intimate scenes depicting vulnerable women at rest or asleep in dimly lit beds.
+356        55           Dramatic close-ups of women's faces conveying intense emotional states.
+58         54           Detailed close-ups of analog tape recorders emphasizing their mechanical operation.
+120        54           Close-up depictions of men with bloodied faces exhibiting intense pain and distress.
+318        52           Dramatic chiaroscuro close-ups of men's faces conveying intense emotion and suspense.
+362        50           Darkly atmospheric giallo tableaux depicting the motionless, often bloodied body of a woman, typically with a knife nearby.
+365        49           Tense reveals of a knife-wielding, shadowy assailant in a dark setting.
+246        48           Serious Outdoor Conversations between a Man and a Woman.
+308        48           Terrorized women in darkened bedrooms facing unseen or impending threats.
+336        47           Scenes depicting formally dressed men engaged in tense, often dimly lit, indoor conversations or deep contemplation.
+155        46           Solemn or mysterious scenes featuring clergy, often engaged in rituals, within dimly lit religious or ornate settings.
+164        45           Pensive scenes of women smoking in dark, mysterious interiors.
+241        44           Dimly lit dining scenes featuring intimate or tense conversations.
+183        43           Scenes featuring women in contemplative or cautious states amidst dense natural surroundings.
+296        43           Scenes of quiet intimacy between a man and woman in bed.
+179        41           Tense exchanges with clergy in dimly lit ecclesiastical settings.
+378        41           Masked killer attacks on terrified women, highlighted by blood on white clothing.
+91         40           Dark, reflective nocturnal waterscapes conveying suspense and hidden threats.
+326        40           Dramatically lit portraits of men in suits engaged in intense, contemplative, or suspicious thought.
+249        39           Dimly lit nocturnal car interiors focusing on a woman's tense or contemplative state.
+165        38           Intimate or tense bedroom scenes featuring smoking couples.
+123        36           Winding road sequences featuring solitary cars traversing isolated natural landscapes.
+166        36           Motionless, bloodied male victims in dark, tense settings.
+286        34           Mirror reflections conveying suspense and impending danger to women.
+33         33           Opening and closing credit sequences overlaid on evocative natural landscapes, frequently depicting trees or water at dusk or twilight.
+67         33           Funeral services and processions.
+314        33           Suspenseful nocturnal scenes featuring a lone figure navigating dimly lit, shadow-laden urban environments.
+22         32           Film credit sequences featuring dramatic nighttime vehicular destruction.
+115        32           Serious or urgent discussions between a nurse and a man, predominantly in medical or clinical settings.
+153        32           Somber or eerie cemetery scenes featuring male figures.
+303        32           Dimly lit close-ups of a man's intense, contemplative, or suspicious expression, often against a dark background.
+374        32           Scenes of a masked assailant menacing a terrified woman with a knife.
+173        31           Atmospheric shower scenes depicting vulnerable women, often emphasizing intimacy and tension.
+220        31           Eerie nocturnal urban scenes featuring a solitary male figure.
+335        31           Shadowy close-ups of hands manipulating door mechanisms in tense, dark environments.
+285        30           Scenes depicting a woman's tense introspection or contemplation within a mysterious, dimly lit interior.
+85         29           Scenes depicting studio photography sessions, often featuring models and photographers.
+167        29           Eerie nocturnal cemetery and graveyard scenes.
+237        29           Scenes of women engaged in tense or distressing phone calls within dimly lit, suspenseful interior settings.
+259        29           Tense, low-light outdoor conversations between a man and a woman.
+1          28           Scenes featuring various aircraft in flight or at airport locations.
+133        28           Tense outdoor dialogues between two women in natural, serene environments.
+138        28           Intense conversations between a man and a woman at lively parties or nightclubs.
+301        28           Tense nocturnal movements of solitary women through dimly lit, shadow-filled environments.
+83         27           Bustling urban street and market scenes.
+100        27           Scenes featuring solitary women in contemplative or pensive moments, primarily on benches in serene park or garden environments.
+119        27           Solemn cemetery visitations and grave-side interactions.
+156        27           Scenes of women in bathrooms engaged in personal grooming, self-examination, or contemplative reflection.
+216        27           Solitary, contemplative smoking scenes in dimly lit, shadowy settings.
+225        27           Serious office discussions at a desk.
+233        27           Tense group discussions in affluent or intellectual interior settings.
+3          26           Opening credit sequences featuring airplanes and production details.
+40         26           Rugged and isolated coastal seascapes.
+72         26           Vibrant stage performances, primarily by women, in nightclub or cabaret environments.
+192        26           Serious conversations between women in indoor settings.
+271        26           Eerie nocturnal exteriors of secluded houses.
+187        25           Tense, dimly lit conversations between characters, frequently featuring smoking.
+234        25           Contemplative indoor scenes of men, frequently by windows or curtains, conveying a mood of serious introspection and quiet tension.
+253        25           A lone figure's tense or contemplative presence within an eerie, shadowed forest.
+275        25           Scenes characterized by overwhelming darkness and obscured forms, hinting at an unseen lurking menace.
+377        25           Scenes of a masked killer menacing a terrified victim with a knife.
+139        24           Dusk-lit seaside conversations and intimate interactions.
+305        24           Close-up shots of women displaying intense or contemplative expressions.
+24         23           Newspaper headlines and articles detailing murder investigations and accusations.
+45         23           Forensic examination of a deceased body in a clinical setting.
+210        23           Tense and mysterious scenes of men in dimly lit cars at night.
+231        23           Panicked female flight through an ominous forest.
+281        23           Private conversations between a man and a woman on a couch.
+368        23           Atmospheric scenes depicting a masked assailant's impending attack on a woman with a knife.
+5          22           Equestrian and carriage scenes set in diverse natural and estate landscapes, often blending serenity with underlying mystery.
+31         22           Historic Venetian canal scenes.
+168        22           Tense armed confrontations in dimly lit interior settings.
+203        22           Intimate and vulnerable scenes of nude or partially undressed women interacting with mirrors in private, dimly lit settings.
+232        22           Tense, elegant dialogues and confrontations in opulent, often theatrical, settings.
+44         21           Scenes depicting conversations between two women in a maritime or coastal environment.
+46         21           Scenes depicting watercraft in transit with prominent distant geographical features.
+103        21           Hospital scenes featuring men with bandaged head injuries and specialized medical equipment.
+106        21           Suspenseful portrayals of men, often shirtless, in dramatically lit, confined interior spaces.
+148        21           Eerie nighttime graveyard scenes featuring women experiencing fear or grief.
+150        21           Detailed portrayals of women engaged in desk-based intellectual or administrative work.
+177        21           Tense, dimly lit armed confrontations and standoffs between men.
+199        21           Dimly lit bar and nightclub dialogues between a man and a woman.
+217        21           Strategic contemplation scenes featuring a man at a desk with chess pieces and a map.
+269        21           Tense or intimate conversations set within vibrantly patterned and intricately decorated interior spaces.
+293        21           Intimate and tense face-to-face encounters in dim, shadowy lighting.
+316        21           Dramatic, low-lit close-ups of men with intense, contemplative, or urgent expressions.
+339        21           Suspenseful scenes of shadowy figures partially obscured by curtains in dim lighting.
+343        21           Scenes of contemplative men in suits within indoor environments featuring curtains.
+346        21           Pensive indoor scenes of suited men, often near a door.
+360        21           Perilous navigation of shadowed staircases.
+369        21           Masked assailant knife attack scenes.
+52         20           Bustling market scenes depicting people shopping, interacting, and browsing various goods.
+126        20           Hospital scenes featuring medical examinations and concerned observation of patients.
+129        20           Tense conversations between two women in a car's backseat.
+176        20           Contemplative or emotionally conflicted nuns.
+211        20           Vehicle-bound scenes of serious dialogue or contemplative tension.
+283        20           Introspective or apprehensive moments featuring a woman in a dimly lit bedroom.
+330        20           Knife attack on a woman.
+342        20           Contemplative close-ups of men in formal wear deep in thought, often featuring subtle indoor greenery.
+345        20           Contemplative close-ups of men in formal attire.
+19         19           Bustling Train Station Scenes of Travel and Anticipation.
+25         19           Opening credit sequences set over scenic landscapes and driving footage.
+118        19           Tense, shadowy close-ups of a hand gripping a gun, portending an imminent threat.
+333        19           Close-ups of women in states of intense fear and distress, marked by tears and dramatic lighting.
+349        19           Tense, shadow-laden hallway scenes featuring a woman navigating an ominous atmosphere.
+353        19           Giallo scenes featuring a woman in a dark forest with a glinting knife.
+26         18           Architectural establishing shots of imposing urban and historical building exteriors.
+35         18           Photography and film studio sessions featuring models and motorcycles.
+47         18           Theatrical stage performances featuring dancers or performers in elaborate, often feathered, costumes under vibrant lighting.
+61         18           Leisurely or contemplative boat scenes with a man and a woman.
+88         18           Serene and mysterious scenes of women interacting with boats in natural, vegetated waterscapes.
+186        18           Subdued indoor scenes of male characters in pensive thought or focused conversation.
+256        18           Tense official questioning or police-involved confrontations.
+312        18           Scenes of tense, asymmetrical discussions between three men, typically in an intellectual or professional indoor environment.
+322        18           Scenes of two men having tense, often smoke-filled, discussions in a cluttered office or study.
+334        18           Intense contemplative and investigative dialogues among men.
+48         17           Scenes of women swimming, floating, or struggling in various bodies of water.
+76         17           Outdoor dialogue scenes in the rain featuring characters walking with umbrellas.
+81         17           Suspenseful indoor scenes featuring characters in wheelchairs.
+142        17           Somber graveyard encounters between a formally dressed man and woman.
+144        17           Ominous foot and leg shots with prominent shadows.
+180        17           Scenes of women in their distinctively decorated private domestic spaces.
+181        17           Clandestine outdoor meetings between two men.
+224        17           Intimate portrayals of a woman's anxious contemplation or fearful anticipation in a tense indoor environment.
+278        17           Introspective scenes of women gazing at their reflections in mirrors.
+311        17           Scenes of ominous lurking figures or concealed threats, dramatically illuminated by faint window light.
+331        17           Tense indoor discussions between two men.
+352        17           Eerie, suspenseful scenes featuring women's silhouettes by windows in darkness.
+366        17           Scenes depicting an obscured threat poised at a doorway.
+56         16           Motorcycle journeys on winding, verdant rural or mountain roads.
+95         16           Scenes of nurses attending to patients in hospital rooms.
+104        16           Intimate bathing scenes between a man and a woman.
+109        16           Tense scenes depicting hands interacting with old-fashioned telephones in darkness.
+140        16           Eerie, candlelit church and altar scenes featuring solemn or mysterious figures.
+261        16           Scenes depicting tense and secretive discussions within elegant library settings.
+263        16           Tense conversations between a man and a woman inside a car.
+313        16           Indoor scenes of formally dressed men in serious contemplation, often featuring prominent paintings or textured walls as backdrops.
+340        16           Chiaroscuro portraits of enigmatic male figures.
+348        16           Ominous Silhouettes in Doorways
+4          15           Scenes of children playing in diverse outdoor environments.
+12         15           The scenes depict competitive motocross racing events.
+15         15           Nocturnal police investigations and patrols conducted on urban canals.
+32         15           Interactions among diverse passengers on a bus during travel.
+34         15           Vibrant outdoor poolside scenes depicting leisure, conversation, and observation.
+59         15           Serious classroom discussions between a man and a woman.
+62         15           Portraits of nurses displaying focused concern or contemplation.
+77         15           Ominous scenes of women struggling or submerged in dark waters.
+99         15           Pensive female gazes from a car window.
+157        15           Intimate mealtime conversations between a man and a woman.
+202        15           Women engaged in private telephone interactions from bed.
+221        15           Scenes depicting women in contemplative or apprehensive repose on couches.
+243        15           Intimate and often tense bedroom scenes featuring a woman and a man amidst ornate decor.
+260        15           Tense and critical conversations between a man and a woman inside a car.
+266        15           Lurking shadowy figures silhouetted against dimly lit walls.
+277        15           Private bedroom encounters between a man and a woman, frequently involving tension or serious discussion.
+280        15           The scenes depict elegant, private conversations between a man and a woman in opulent indoor settings.
+282        15           Intimate, serious discussions between two men.
+310        15           A woman covertly observing through curtains or shadows, conveying fear and suspense.
+367        15           Stylized masked killer murder scenes.
+29         14           Pharmacy and clinical environment scenes depicting characters, interactions, and pharmaceutical items.
+57         14           Tense forest scenes of pursuit and confrontation.
+73         14           Establishing shots of mysterious, often isolated, castles or grand estates at night.
+110        14           Discussions between men in urban or coastal waterside settings.
+113        14           Solemn or tense discussions between two men in a graveyard.
+114        14           Isolated figures, typically women, in vast and rugged coastal settings, often at dusk or night.
+122        14           Contemplative male figures in atmospherically lit interior settings.
+128        14           Tense police interrogation scenes.
+135        14           Intimate interior scenes of women observing ornate decorative art and objects.
+143        14           Ominous or suspenseful close-ups of solitary footwear in darkness.
+161        14           Eerie candlelit scenes emphasizing looming shadows and suspense in pervasive darkness.
+178        14           Intimate and vulnerable moments of men in repose.
+188        14           Intimate and tender physical contact between individuals.
+212        14           Scenes of men engaged in serious discussions while traveling by car.
+248        14           Giallo murder tableaux of female victims.
+252        14           Intimate and tense emotional exchanges between a man and a woman.
+254        14           Scenes of women poised in doorways, exhibiting tense contemplation or watchful suspense.
+272        14           Eerie giallo interior scenes featuring a cautious woman at a threshold.
+324        14           A man's solitary, shadowed contemplation or troubled thought in a tense atmosphere.
+325        14           Pivotal library conversations between two men.
+328        14           Scenes depicting tense, formal dialogues between two men, invariably framed with one's back to the camera.
+338        14           Scenes depicting solitary figures cautiously navigating suspenseful, shadow-filled hallways.
+361        14           Impending knife attacks on a vulnerable woman in a darkened bedroom setting.
+6          13           Outdoor credit sequences featuring a man in a natural setting.
+8          13           Stylized credit sequences set against bustling urban streets with a prominent web-like or spiderweb overlay.
+14         13           Elevated panoramic views of urban cityscapes and rooftops.
+17         13           Scenes of intricate photographic operations conducted in darkness or low light.
+39         13           Giallo film title sequences featuring a partially obscured woman against a vivid red background.
+41         13           Scenes of urgent and frantic chases or escapes.
+50         13           Serene yet foreboding waterside landscapes at dusk, framed by silhouetted trees.
+51         13           Scenes depicting a woman, often with a man, on or by a bridge over calm water, framed by urban or ancient landscapes.
+64         13           Bustling vintage urban street and square scenes with traffic and pedestrians.
+78         13           Tense two-person conversations on atmospheric sea cliffs.
+98         13           Men in suits navigating urban street environments.
+105        13           Intimate or tense bathtub encounters between a man and a woman.
+131        13           Injured men, often in suits, slumped or pinned against walls.
+132        13           Scenes depicting a man driving a car on a road with a focused demeanor, traversing diverse natural and urban environments.
+136        13           Scenes of characters navigating dimly lit spaces filled with mannequins or veiled figures, creating an eerie and suspenseful atmosphere.
+152        13           Tense police-involved investigative discussions or confrontations.
+175        13           Scenes of men drinking contemplatively in sumptuously decorated, atmospheric interiors.
+193        13           Tense, dimly lit street conversations between men, often observed by or involving a woman.
+206        13           Men conducting desk-based investigation or journalistic work in dimly lit office settings.
+209        13           Flashlight-guided investigations within dark, mysterious, or ominous environments.
+267        13           Contemplative female portraits.
+268        13           Suspenseful nocturnal approaches to isolated, dimly lit houses.
+279        13           Tense and serious hallway discussions between a man and a woman.
+295        13           Dimly lit bedroom scenes depicting resting couples, characterized by deep shadows and an atmosphere of quiet tension and vulnerability.
+9          12           Tension-building bathroom scenes featuring dripping or flowing water and ominous shadows.
+16         12           Scenes depicting the atmospheric operation of film projectors and reels in dark or dimly lit environments.
+18         12           Suspenseful nocturnal and dimly lit train sequences.
+21         12           Scenes depicting hands interacting with handwritten documents or correspondence.
+54         12           Secluded vintage car scenes in natural, often wooded, environments.
+55         12           Enigmatic felines with prominent, glowing eyes in dark, suspenseful settings.
+66         12           Intense fires illuminating dark settings and casting dramatic shadows.
+70         12           Hospital room scenes centered on investigative documentation or critical information disclosure around a patient's bedside.
+75         12           Outdoor breakfast scenes between a man and a woman, marked by serious discussion or contemplation.
+82         12           Crowded urban street scenes depicting everyday life.
+90         12           Scenes of a man's shaving routine, often highlighting his reflection in a decorative bathroom.
+92         12           Unsettling nighttime scenes of women dramatically illuminated by fires.
+93         12           Tense, foggy forest confrontations between two men, often involving a firearm.
+102        12           Scenes depicting a bloodied, injured man in a forest.
+134        12           Characters in intimate and vulnerable bath scenes.
+169        12           Establishing shots of mysterious, often ornate, buildings at night.
+171        12           Tense, secretive conversations between men in dimly lit bar settings.
+189        12           Intimate or emotionally charged embraces between a man and a woman, frequently against a door.
+218        12           Tableaux of motionless women in outdoor settings dominated by a distant castle.
+219        12           Scenes of a contemplative mustachioed man in a library setting.
+236        12           Scenes of women engaged in tense or concerned phone calls in intimate indoor environments.
+240        12           Suspenseful scenes of female fear and apprehension in dimly lit indoor settings.
+244        12           Pensive female character close-ups.
+250        12           Enigmatic portraits of veiled women.
+251        12           Tense power dynamic dialogues between two men in opulent, antique settings.
+319        12           Dramatic close-ups of a man's face displaying intense, deep emotion under shadowy lighting.
+320        12           Intense female gazes with serious or contemplative expressions against a dark, dramatic background.
+329        12           Tense, private two-man discussions often occurring by doorways or in secretive indoor settings.
+344        12           Shadow-obscured men in suspenseful doorways.
+351        12           Scenes depicting women's terrified reactions and desperate gestures within pervasive darkness.
+359        12           Tense scenes of a woman's hand reaching for a door handle amidst encompassing darkness.
+363        12           Suspenseful approaches to dark doorways, hinting at an unseen or imminent threat.
+370        12           Scenes of masked assailants stalking fleeing victims with an imminent knife attack.
+10         11           Waterfront credit sequences often featuring figures and industrial or cityscape backdrops.
+23         11           Silent, contemplative children illuminated against dark, eerie backdrops.
+28         11           Giallo scenes featuring shirtless men in tense phone calls within distinctive home interiors.
+63         11           Scenes of women gagged and restrained in distress.
+65         11           A man's desperate confinement behind bars.
+69         11           Scenes of a gathering around a critical or deceased individual in a tense, private setting.
+79         11           Courtroom drama scenes.
+86         11           Tranquil and secluded scenes featuring a man in a small boat on calm water surrounded by dense reeds and vegetation.
+87         11           Leisurely outdoor meal and conversation scenes at private estates.
+94         11           Conversations between a man and a woman in an airport setting.
+101        11           Tense interpersonal confrontations between a man and a woman in elevators or confined spaces.
+107        11           Cluttered kitchen confrontations between two men.
+125        11           Dimly lit intimate encounters in cars.
+149        11           Elegant indoor scenes depicting a man and woman interacting by or at a piano.
+162        11           Dimly lit, shadowy car interior scenes establishing a mood of suspense and impending danger.
+172        11           Tense or mysterious indoor phone call scenes featuring a man and an accompanying, reacting woman.
+207        11           Serious outdoor conversations between two formally dressed men, often by a parked car.
+214        11           Walking conversations between a man and a woman on streets.
+223        11           Contemplative indoor close-ups of a blonde woman.
+235        11           A distressed woman's suspenseful phone call in a dimly lit, tense environment.
+238        11           Scenes of women in tense contemplation or ominous anticipation within dimly lit interiors.
+239        11           Tense parlor or drawing-room scenes centered around tea service and strained conversations between a woman and men.
+242        11           Contemplative indoor smoking scenes featuring men in suits.
+245        11           Plot-critical outdoor exchanges between a man and a woman.
+255        11           Hand-centric suspense sequences in deep shadow.
+265        11           A man's tense and contemplative introspection in a formal, dimly lit indoor setting.
+284        11           Tense discussions among individuals within opulent interiors featuring grand staircases.
+288        11           Tense candlelit scenes of a woman in darkness.
+300        11           Tense, shadow-filled alley scenes depicting an isolated figure encountering an emerging threat.
+304        11           Dimly lit scenes emphasizing a figure's prominent shadow or silhouette against a wall.
+307        11           Scenes of fallen women in dimly lit or shadowy environments.
+341        11           Pensive male contemplation in shadowy, suspenseful interiors.
+357        11           Intense close-up shots of blonde women's emotive gazes.
+11         10           Scenes of intense outdoor surveillance using binoculars.
+20         10           Suspenseful nocturnal scenes depicting wheelchair-bound figures navigating dark, outdoor environments.
+49         10           Autopsy scenes or unsettling post-mortem examinations in giallo films.
+74         10           Establishing shots of foreboding and isolated gothic castles.
+89         10           Tense nocturnal searches and navigations through fog, illuminated by flashlights.
+108        10           Tense conversations between a man and a woman aboard a boat.
+116        10           Mirrored discussions between two women.
+141        10           Urgent driving sequences.
+145        10           Atmospheric scenes of men in dimly lit, cluttered kitchens conveying suspense and mystery.
+159        10           Scenes depicting women in atmospheric interiors defined by colorful lamps and wall posters.
+160        10           Dimly lit restaurant scenes featuring women smoking during conversations.
+174        10           Eerie nocturnal urban or architectural credit sequences.
+184        10           Scenes depicting a professional in a white coat engaged in a serious and concerned phone call.
+185        10           Bathtub murder scenes.
+200        10           Contemplative or tense scenes of a man in a car during rain.
+201        10           Tense social gatherings in stylishly decorated living rooms.
+204        10           Elegant outdoor social gatherings featuring two men in serious conversation, often framed by classical architecture.
+222        10           Canal-side discussions between a man and a woman.
+226        10           Intense close-up shots of women in hats conveying mystery through their gaze.
+229        10           Tense, candlelit dinner discussions between two men.
+230        10           Quiet, contemplative domestic scenes of a woman reading beside a reclining man.
+257        10           Nighttime, dimly lit conversations between a man and a woman, typically by a car, characterized by seriousness or tension.
+258        10           Clandestine and tense nocturnal encounters between a man and a woman in isolated forest settings.
+287        10           Intimate bedside conversations.
+290        10           Tense phone call scenes featuring men at dimly lit office desks.
+291        10           Tense interpersonal confrontations in dimly lit spaces.
+302        10           Contemplative and tense indoor scenes featuring a man by a door.
+315        10           Shadowy and tense staircase scenes featuring a solitary male figure.
+317        10           Moments of shadowy male apprehension or intense contemplation.
+327        10           Tense, formal discussions between two men in indoor environments.
+337        10           Close-up portrayals of a woman's tearful emotional distress.
+355        10           Suspenseful scenes of women in shadowy thresholds.
+
+
+Total clusters: 331
+Total screenshots: 8831
