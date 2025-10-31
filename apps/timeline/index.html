@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cluster Timeline Visualization</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 0;
+      margin: 0;
+    }
+
+    h1 {
+      display: none;
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      gap: 0;
+    }
+
+    .sidebar {
+      width: 350px;
+      flex-shrink: 0;
+      background: #252525;
+      border-radius: 0;
+      padding: 20px;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .cluster-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cluster-item {
+      padding: 12px;
+      background: #2a2a2a;
+      border: 2px solid #333;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cluster-item:hover {
+      background: #333;
+      border-color: #4a90e2;
+    }
+
+    .cluster-item.active {
+      background: #4a90e2;
+      border-color: #4a90e2;
+    }
+
+    .cluster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .cluster-id {
+      font-weight: 600;
+      color: #4a90e2;
+      font-size: 14px;
+    }
+
+    .cluster-item.active .cluster-id {
+      color: #fff;
+    }
+
+    .cluster-count {
+      background: #333;
+      color: #aaa;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .cluster-item.active .cluster-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .cluster-label {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .cluster-item.active .cluster-label {
+      color: #fff;
+    }
+
+    .visualization {
+      flex: 1;
+      background: #252525;
+      border-radius: 0;
+      padding: 30px;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .viz-header {
+      margin-bottom: 30px;
+    }
+
+    .viz-header h2 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .viz-info {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .timeline-container {
+      position: relative;
+    }
+
+    .timeline-row {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #4a90e2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .timeline-remove {
+      background: #d9534f;
+      color: #fff;
+      border: none;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .timeline-remove:hover {
+      background: #c9302c;
+    }
+
+    .timeline-bar {
+      height: 60px;
+      background: #2a2a2a;
+      border-radius: 4px;
+      position: relative;
+      border: 1px solid #333;
+    }
+
+    .timeline-point {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: #4a90e2;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(74, 144, 226, 0.5);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .timeline-point:hover {
+      background: #357abd;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    .timeline-point-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      margin-bottom: 8px;
+    }
+
+    .timeline-point:hover .timeline-point-tooltip {
+      opacity: 1;
+    }
+
+    .timeline-axis {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding: 0 10px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .axis-label {
+      text-align: center;
+    }
+
+    .x-axis-container {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid #333;
+    }
+
+    .x-axis-title {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .x-axis {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
+    }
+
+    .x-axis-tick {
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #666;
+    }
+
+    .empty-state h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cluster Timeline Visualization</h1>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Clusters</h2>
+      <div id="cluster-list" class="cluster-list"></div>
+    </div>
+
+    <div class="visualization">
+      <div class="viz-header">
+        <h2>Timeline View</h2>
+        <div class="viz-info" id="viz-info">Select clusters from the list to visualize their distribution across movie runtime</div>
+      </div>
+
+      <div id="timeline-container" class="timeline-container">
+        <div class="empty-state">
+          <h3>No clusters selected</h3>
+          <p>Click on clusters in the sidebar to add them to the timeline</p>
+        </div>
+      </div>
+
+      <div class="x-axis-container" id="x-axis-container" style="display: none;">
+        <div class="x-axis-title">Movie Runtime</div>
+        <div class="x-axis">
+          <div class="x-axis-tick">0%</div>
+          <div class="x-axis-tick">25%</div>
+          <div class="x-axis-tick">50%</div>
+          <div class="x-axis-tick">75%</div>
+          <div class="x-axis-tick">100%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let timelineData = null;
+    let selectedClusters = new Set();
+
+    async function loadData() {
+      try {
+        const response = await fetch('timeline_data.json');
+        timelineData = await response.json();
+        renderClusterList();
+      } catch (error) {
+        console.error('Error loading timeline data:', error);
+        document.getElementById('cluster-list').innerHTML = '<div style="color: #d9534f; padding: 20px;">Error loading data</div>';
+      }
+    }
+
+    function renderClusterList() {
+      const clusters = timelineData.clusters;
+
+      const html = clusters.map(cluster => {
+        return `
+          <div class="cluster-item" onclick="toggleCluster('${cluster.cluster_id}')" id="cluster-item-${cluster.cluster_id}">
+            <div class="cluster-header">
+              <span class="cluster-id">Cluster ${cluster.cluster_id}</span>
+              <span class="cluster-count">${cluster.screenshot_count}</span>
+            </div>
+            <div class="cluster-label">${cluster.label}</div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cluster-list').innerHTML = html;
+    }
+
+    function toggleCluster(clusterId) {
+      if (selectedClusters.has(clusterId)) {
+        selectedClusters.delete(clusterId);
+        document.getElementById(`cluster-item-${clusterId}`).classList.remove('active');
+      } else {
+        selectedClusters.add(clusterId);
+        document.getElementById(`cluster-item-${clusterId}`).classList.add('active');
+      }
+
+      renderTimeline();
+    }
+
+    function removeCluster(clusterId) {
+      selectedClusters.delete(clusterId);
+      document.getElementById(`cluster-item-${clusterId}`).classList.remove('active');
+      renderTimeline();
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timeline-container');
+      const xAxisContainer = document.getElementById('x-axis-container');
+      const vizInfo = document.getElementById('viz-info');
+
+      if (selectedClusters.size === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <h3>No clusters selected</h3>
+            <p>Click on clusters in the sidebar to add them to the timeline</p>
+          </div>
+        `;
+        xAxisContainer.style.display = 'none';
+        vizInfo.textContent = 'Select clusters from the list to visualize their distribution across movie runtime';
+        return;
+      }
+
+      xAxisContainer.style.display = 'block';
+      vizInfo.textContent = `Showing ${selectedClusters.size} cluster${selectedClusters.size > 1 ? 's' : ''}`;
+
+      const selectedClusterData = timelineData.clusters.filter(c => selectedClusters.has(c.cluster_id));
+
+      const html = selectedClusterData.map(cluster => {
+        const pointsHtml = cluster.points.map(point => {
+          // Size based on count (min 8px, max 24px)
+          const size = Math.min(24, Math.max(8, 8 + point.count * 2));
+          const percentage = point.percentage * 100;
+
+          return `
+            <div class="timeline-point" style="left: ${percentage}%; width: ${size}px; height: ${size}px;">
+              <div class="timeline-point-tooltip">
+                ${percentage.toFixed(0)}% (${point.count} screenshot${point.count > 1 ? 's' : ''})
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="timeline-row">
+            <div class="timeline-title">
+              <span>Cluster ${cluster.cluster_id} - ${cluster.label}</span>
+              <button class="timeline-remove" onclick="removeCluster('${cluster.cluster_id}')">Remove</button>
+            </div>
+            <div class="timeline-bar">
+              ${pointsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = html;
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

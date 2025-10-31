@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giallo Film Cluster Viewer</title>
+  <meta name="description" content="Visual exploration of thematic clusters in Italian Giallo horror films from the 1970s">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      display: none;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .subtitle {
+      color: #aaa;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      gap: 0;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .sidebar {
+      width: 400px;
+      flex-shrink: 0;
+      background: #252525;
+      border-radius: 0;
+      padding: 20px;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 15px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .stats {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .stats div {
+      margin-bottom: 8px;
+    }
+
+    .stats span {
+      color: #4a90e2;
+      font-weight: 600;
+    }
+
+    .cluster-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cluster-item {
+      padding: 12px;
+      background: #2a2a2a;
+      border: 2px solid #333;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .cluster-item:hover {
+      background: #333;
+      border-color: #4a90e2;
+    }
+
+    .cluster-item.active {
+      background: #4a90e2;
+      border-color: #4a90e2;
+    }
+
+    .cluster-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .cluster-id {
+      font-weight: 600;
+      color: #4a90e2;
+      font-size: 14px;
+    }
+
+    .cluster-item.active .cluster-id {
+      color: #fff;
+    }
+
+    .cluster-count {
+      background: #333;
+      color: #aaa;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .cluster-item.active .cluster-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .cluster-label {
+      color: #aaa;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .cluster-item.active .cluster-label {
+      color: #fff;
+    }
+
+    .content {
+      flex: 1;
+      min-width: 0;
+      overflow-y: auto;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .cluster-info {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: #252525;
+      border-radius: 8px;
+    }
+
+    .cluster-info h2 {
+      color: #4a90e2;
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .cluster-info .label {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .cluster-info .count {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .screenshot-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #2a2a2a;
+      transition: all 0.3s ease;
+    }
+
+    .screenshot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .screenshot-item:hover {
+      transform: scale(2);
+      z-index: 100;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .screenshot-item:hover img {
+      transform: scale(1);
+    }
+
+    .screenshot-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 4px 8px;
+      font-size: 10px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .welcome {
+      text-align: center;
+      padding: 60px 40px;
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    .welcome h2 {
+      color: #4a90e2;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    footer {
+      display: none;
+    }
+
+    footer a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #252525;
+      border-radius: 8px;
+      padding: 40px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content h2 {
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .modal-content p {
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    .modal-content .warning {
+      color: #ff9800;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .modal-button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .modal-button.accept {
+      background: #4a90e2;
+      color: #fff;
+    }
+
+    .modal-button.accept:hover {
+      background: #357abd;
+    }
+
+    .modal-button.decline {
+      background: #333;
+      color: #aaa;
+    }
+
+    .modal-button.decline:hover {
+      background: #444;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Giallo Film Cluster Viewer</h1>
+    <div class="subtitle">Visual exploration of thematic patterns in Italian Giallo horror cinema</div>
+    <div class="description">
+      This visualization explores recurring visual themes and motifs across classic Italian Giallo films from the 1970s.
+      Screenshots have been analyzed and grouped into clusters using machine learning, revealing common patterns in cinematography,
+      color, lighting, and subject matter.
+    </div>
+  </header>
+
+  <div id="warning-modal" class="modal">
+    <div class="modal-content">
+      <h2>Content Warning</h2>
+      <p>This visualization contains screenshots from Italian Giallo horror films from the 1970s.</p>
+      <div class="warning">
+        ⚠ WARNING: These images may contain disturbing imagery.
+      </div>
+      <p>Do you wish to continue?</p>
+      <div class="modal-buttons">
+        <button class="modal-button accept" onclick="acceptWarning()">Load Data</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Clusters</h2>
+      <div id="stats" class="stats">
+        <div>Loading...</div>
+      </div>
+      <div id="cluster-list" class="cluster-list"></div>
+    </div>
+
+    <div class="content">
+      <div id="cluster-content">
+        <div class="welcome">
+          <h2>Welcome</h2>
+          <p>Select a cluster from the sidebar to explore screenshots grouped by visual similarity</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Analyzed using VLM (Vision Language Model) and clustered with HDBSCAN |
+      Filtered for public viewing (mature content excluded)
+    </p>
+  </footer>
+
+  <script>
+    let clustersData = null;
+    let selectedCluster = null;
+
+    function acceptWarning() {
+      document.getElementById('warning-modal').style.display = 'none';
+      loadData();
+    }
+
+    function declineWarning() {
+      window.history.back();
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch('data/clusters_data.json');
+        clustersData = await response.json();
+        renderStats();
+        renderClusterList();
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('cluster-content').innerHTML = '<div class="loading">Error loading data</div>';
+      }
+    }
+
+    function renderStats() {
+      const html = `
+        <div>Total Clusters: <span>${clustersData.metadata.total_clusters}</span></div>
+        <div>Total Screenshots: <span>${clustersData.metadata.total_screenshots}</span></div>
+      `;
+      document.getElementById('stats').innerHTML = html;
+    }
+
+    function renderClusterList() {
+      // Sort clusters by screenshot count (descending)
+      const clusterIds = Object.keys(clustersData.clusters).sort((a, b) =>
+        clustersData.clusters[b].length - clustersData.clusters[a].length
+      );
+
+      const html = clusterIds.map(clusterId => {
+        const count = clustersData.clusters[clusterId].length;
+        const label = clustersData.labels[clusterId]?.classification || 'No classification';
+
+        return `
+          <div class="cluster-item" onclick="selectCluster('${clusterId}')" id="item-${clusterId}">
+            <div class="cluster-header">
+              <span class="cluster-id">Cluster ${clusterId}</span>
+              <span class="cluster-count">${count}</span>
+            </div>
+            <div class="cluster-label">${label}</div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cluster-list').innerHTML = html;
+    }
+
+    function selectCluster(clusterId) {
+      selectedCluster = clusterId;
+
+      // Update active item
+      document.querySelectorAll('.cluster-item').forEach(item => item.classList.remove('active'));
+      document.getElementById(`item-${clusterId}`).classList.add('active');
+
+      renderCluster(clusterId);
+    }
+
+    function renderCluster(clusterId) {
+      const screenshots = clustersData.clusters[clusterId];
+      const label = clustersData.labels[clusterId]?.classification || 'No classification';
+
+      const S3_BASE_URL = 'https://thisismattmiller.s3.us-east-1.amazonaws.com/giallo_cluster_images/';
+
+      const html = `
+        <div class="cluster-info">
+          <h2>Cluster ${clusterId}</h2>
+          <div class="label">${label}</div>
+          <div class="count">${screenshots.length} screenshots</div>
+        </div>
+        <div class="screenshot-grid">
+          ${screenshots.map(filename => {
+            const imageUrl = S3_BASE_URL + filename;
+            return `
+              <div class="screenshot-item">
+                <img src="${imageUrl}" alt="${filename}" loading="lazy" />
+                <div class="screenshot-label">${filename}</div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+
+      document.getElementById('cluster-content').innerHTML = html;
+    }
+
+    // Don't auto-load data, wait for user to accept warning
+  </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duplicate Descriptions Viewer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #1a1a1a;
+      color: #e0e0e0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 40px;
+      font-size: 14px;
+    }
+
+    .duplicate-section {
+      background: #252525;
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 40px;
+      border: 2px solid #333;
+    }
+
+    .duplicate-header {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #333;
+    }
+
+    .rank-badge {
+      display: inline-block;
+      background: #4a90e2;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .count-badge {
+      display: inline-block;
+      background: #d9534f;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .description-text {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #fff;
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 4px;
+      border-left: 4px solid #4a90e2;
+    }
+
+    .screenshots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .screenshot-card {
+      background: #2a2a2a;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid #333;
+      transition: all 0.2s;
+    }
+
+    .screenshot-card:hover {
+      border-color: #4a90e2;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    }
+
+    .screenshot-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-info {
+      padding: 12px;
+      font-size: 12px;
+    }
+
+    .screenshot-filename {
+      color: #4a90e2;
+      font-weight: 600;
+      margin-bottom: 4px;
+      word-break: break-all;
+    }
+
+    .screenshot-movie {
+      color: #aaa;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: #aaa;
+      font-size: 18px;
+    }
+
+    .error {
+      text-align: center;
+      padding: 60px;
+      color: #d9534f;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Duplicate Descriptions Viewer</h1>
+  <div class="subtitle">Top 20 most repeated VLM-generated descriptions</div>
+
+  <div id="content">
+    <div class="loading">Loading duplicates data...</div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch('duplicates.json');
+        const data = await response.json();
+        renderDuplicates(data);
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('content').innerHTML = '<div class="error">Error loading duplicates data</div>';
+      }
+    }
+
+    function renderDuplicates(data) {
+      const html = data.map(duplicate => {
+        const screenshotsHtml = duplicate.screenshots.map(screenshot => {
+          return `
+            <div class="screenshot-card">
+              <img class="screenshot-image" src="data:image/jpeg;base64,${screenshot.image_data}" alt="${screenshot.filename}">
+              <div class="screenshot-info">
+                <div class="screenshot-filename">${screenshot.filename}</div>
+                <div class="screenshot-movie">${screenshot.movie}</div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="duplicate-section">
+            <div class="duplicate-header">
+              <div>
+                <span class="rank-badge">#${duplicate.rank}</span>
+                <span class="count-badge">${duplicate.count} instances</span>
+              </div>
+              <div class="description-text">${duplicate.description}</div>
+            </div>
+            <div class="screenshots-grid">
+              ${screenshotsHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('content').innerHTML = html;
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
