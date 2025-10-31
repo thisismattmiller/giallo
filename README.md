@@ -1,5 +1,13 @@
 # Giallo Film Visual Analysis
 
+Blog Post: https://thisismattmiller.com/post/giallo/
+
+Apps:
+
+Cluster Viewer: https://thisismattmiller.github.io/giallo/apps/cluster-viewer-public/
+
+Timeline Ploter: https://thisismattmiller.github.io/giallo/apps/timeline/
+
 
 
 
@@ -152,23 +160,6 @@ See [`data_embeddings/README.md`](data_embeddings/README.md) for detailed exampl
 - **Largest Cluster**: 333 screenshots (fearful women's faces in shadows)
 - **Embedding Dimension**: 3,072 (Google Gemini text embeddings)
 
-## Notable Clusters
-
-Top clusters by screenshot count ([full list](data_clusters/cluster_text_list.txt)):
-
-1. **Cluster 354** (333): Fearful women's faces obscured by darkness and shadow
-2. **Cluster 297** (309): Intimate bedroom scenes of couples
-3. **Cluster 294** (290): Tense, dimly lit indoor dialogues
-4. **Cluster 30** (186): Movie credit sequences
-5. **Cluster 264** (154): Nocturnal scenes of vehicles on dark roads
-
-## Public Demo
-
-A filtered, static version of the cluster viewer is available in [`apps/cluster-viewer-public/`](apps/cluster-viewer-public/). This version:
-- Excludes clusters with mature content
-- Loads images from AWS S3
-- Can be deployed to GitHub Pages
-- Includes content warning modal
 
 ## Content Warning
 
@@ -179,49 +170,7 @@ This project analyzes Italian Giallo horror films from the 1970s. The source mat
 
 The public viewer filters out explicit content, but the full dataset contains screenshots that may be disturbing.
 
-## Technical Details
-
-### Clustering
-
-- **Algorithm**: HDBSCAN (Hierarchical Density-Based Spatial Clustering)
-- **Distance Metric**: Cosine similarity on text embeddings
-- **Min Cluster Size**: 15 screenshots
-- **Outlier Detection**: Screenshots not fitting any cluster are labeled as "-1"
-
-### Embeddings
-
-- **Model**: Google Gemini text-embedding-004
-- **Format**: Compressed NumPy archives (.npz)
-- **Compression**: ~72% size reduction vs. JSON (15-18MB per film)
-- **Dimensions**: 3,072 float32 values per screenshot
-
-### VLM Descriptions
-
-- **Model**: Nebius Studio API (GPT-4-Vision-like model)
-- **Prompt**: Atmospheric scene descriptions for Giallo films
-- **Fields**: Tags (list) and description (text)
-
-## Video Compilation
-
-The cluster viewer can compile screenshots from a cluster into a video montage. Example compilation from the "eyes" cluster:
-- **Location**: `/Volumes/NextGlum/giallo/saved_videos/eyes_compilation.mp4`
-- **Playlist**: [`saved_videos/eyes/playlist.txt`](/Volumes/NextGlum/giallo/saved_videos/eyes/playlist.txt)
-
-## Future Work
-
-- [ ] Temporal analysis of motifs across film timelines
-- [ ] Cross-referencing clusters with film metadata (director, year, subgenre)
-- [ ] Audio analysis integration
-- [ ] Character detection and tracking
-- [ ] Color palette extraction per cluster
-
 ## License
 
 This repository contains analytical tools and metadata only. The source films are copyrighted works used for academic/analytical purposes under fair use.
 
-## Acknowledgments
-
-- Italian Giallo filmmakers of the 1970s
-- HDBSCAN clustering algorithm
-- Google Gemini and Nebius Studio APIs
-- FFmpeg project
